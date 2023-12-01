@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlipStream x Solent Demo</title>
+    <link href="https://unpkg.com/video.js@7/dist/video-js.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js@7/dist/video.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Roboto:wght@400;500;700&family=Rosarivo&family=Sniglet&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center; /* Center align all text content */
+        }
+
+        h1, p {
+            margin: 20px 0; /* Add some space around h1 and p */
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Adjust margin as needed */
+        }
+
+        .video-container video {
+            max-width: 100%; /* Adjust video size */
+        }
+    </style>
+</head>
+<body>
+    <h1>SlipStream x Solent Demo</h1>
+    <p>Video display below is from SlipStream using RTMP Push Deployment.</p>
+    
+    <input type="text" id="videoUrl" placeholder="Enter video URL">
+    <button onclick="changeVideo()">Change Video</button>
+    
+    <div class="video-container">
+        <video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
+            <source src="https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
+
+    <script>
+        function changeVideo() {
+            var videoUrl = document.getElementById('videoUrl').value;
+            var videoPlayer = videojs('my-video');
+            
+            // Change the video source
+            videoPlayer.src({
+                src: videoUrl,
+                type: 'application/x-mpegURL'
+            });
+            
+            // Load the new video source
+            videoPlayer.load();
+        }
+    </script>
+</body>
+</html>

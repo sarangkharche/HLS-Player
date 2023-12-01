@@ -1,0 +1,39 @@
+h1 {
+  margin: 20px 0;
+  font-weight: 700; /* Add this line to make h1 bold */
+}
+/* Video url */
+#videoUrl {
+  min-width: 350px;
+  min-height: 30px;
+}
+/* Video container */
+.video-container {
+  min-width: 0px;
+  width: 100% !important;
+  padding-top: 30px;
+}
+
+/* Button */
+button {
+  min-height: 30px;
+}
+
+/* Video url */
+#videoUrl {
+  transform: translatex(0px) translatey(0px);
+  height: 30px;
+  min-height: 30px;
+}
+/* Video url */
+#videoUrl {
+  min-height: 2px;
+  height: 25px;
+}
+
+/* Center the play button */
+.video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
